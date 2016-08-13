@@ -1,16 +1,15 @@
 {% extends "concatenate/base.html" %}
 {% load staticfiles %}
-
+{% load bootstrap3 %}
 {% block content %}
 <div class="col-md-12">
 </div>
 <div class="col-md-12">
-    <h2>Concatenate</h2>
 </div>
 
 <form action="{%url 'concatenate:index' %}" method="POST">
     {%csrf_token%}
-    {{form}}
+     {%bootstrap_form form%}
 
     <button type="submit">Process</button>
 </form>

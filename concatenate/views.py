@@ -9,12 +9,15 @@ def index(request):
         form.input1 = "TEST"
     else:
         form = ProcessForm(request.POST)
-        if form.is_valid():
-            input1 = request.POST['input1']
-            print(input1.rstrip('\n'))
-            data = form.data.copy()
-            data['output1'] = "processed"
-            form.data = data
+        input1 = request.POST['input1']
+        # newstring = input1.rstrip('\r\n') WHy this not work
+        newstring = input1.replace('\r\n', ' ')
+        print(newstring)
+
+        data = form.data.copy()
+        data['output1'] = newstring
+        form.data = data
 
     context = {'form': form}
     return render(request, 'concatenate/index.html', context)
+
