@@ -1,1 +1,4 @@
-web: gunicorn job.wsgi --log-file -
+
+
+
+web: gunicorn johan.wsgi --log-file -
