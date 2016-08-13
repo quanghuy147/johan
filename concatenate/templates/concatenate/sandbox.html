@@ -1,0 +1,29 @@
+{%extends 'concatenate/base.html'%}
+{% load staticfiles %}
+{%load bootstrap3%}
+{%block content%}
+
+
+<!--<a class="btn" href="{%url 'concatenate:notify_new_application'%}">Send email</a>-->
+
+<!--<a class="btn" href="{%url 'uploader:upload' %}">Test Upload</a>-->
+
+<!--<div class="form-group row">-->
+<!--<label for="example-text-input" class="col-xs-2 col-form-label">Text</label>-->
+<!--<div class="col-xs-10">-->
+<!--<input class="form-control" type="text" value="Artisanal kale" id="example-text-input">-->
+<!--<label class="control-label" for="id_email">Email</label>-->
+<!--<input class="form-control" id="id_email" maxlength="50" name="email" placeholder="Your friend&#39;s email" type="text"/>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<form method="POST" action="#" class="form">
+    {%csrf_token%}
+    {{form.email}}
+    <button type="submit">Submit</button>
+</form>
+
+{%endblock%}
+
+
